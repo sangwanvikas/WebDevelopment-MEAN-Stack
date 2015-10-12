@@ -1,4 +1,4 @@
-This project is being developed as a part of the course CS5610 taught by Prof. Jose Annunziato. I relished learning new technologies in this course that I could use to channel my ideas to diverse practical implementations. 
+This project is being developed as a part of the course CS5610 taught by Prof. Jose Annunziato. Being a polygot programmer I relish learning new technologies in this course while working on my prject and assignemnts.
 
 1. I have designed UI for a project (Name - FormMaker) using HTML5, bootstrap and CSS. HTML pages are available in WebDevelopment-MEAN-Stack/public/assignment/.
 2. I have also created a simple HTTP server ( WebDevelopment-MEAN-Stack/server.js) in NodeJS which serves requested HTML files to the client.

@@ -9,7 +9,7 @@ var fs      = require('fs');
  */
 var SampleApp = function() {
 
-    //  Scope.
+    //  Scope. 
     var self = this;
 
 
