@@ -1,0 +1,320 @@
+﻿body {
+    background-color: white;
+}
+/*--------------------------------------handling header navigation bars------------------------------------------------------*/
+
+.app-image {
+    max-width: 100%;
+    min-height: 250%;
+}
+
+.navbar-brand {
+    font-family: 'AR JULIAN';
+    font-size: x-large;
+}
+
+.navbar-inverse .navbar-nav li a {
+    color: rgba(225, 225, 225, 1);
+    background-color: transparent;
+    /*font-weight: bold;*/
+}
+
+    .navbar-inverse .navbar-nav li a:hover:not(.active) {
+        text-decoration: underline;
+        color: rgba(225, 225, 225, 1);
+        background-color: transparent;
+    }
+
+.navbar-inverse .navbar-nav li .active {
+    color: white;
+    background-color: transparent;
+}
+
+.form-text-span {
+    color: white;
+}
+
+.maker-text-span {
+    color: rgba(127, 188, 1, 1);
+}
+
+.header-link {
+    margin: 0px;
+    font-weight: 400;
+    font-size: medium;
+}
+
+.navbar-inverse navbar-nav > li > a:focus {
+    color: blue;
+}
+
+.link-separator {
+    font-weight: 900;
+}
+
+/*--------------------------------------handling SIDE navigation bars------------------------------------------------------*/
+
+.sidebar {
+    background-color: transparent;
+    border-right: 1px solid #eee;
+    bottom: 0;
+    display: table;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 20px;
+    position: fixed;
+    top: 70px;
+    z-index: 1000;
+    font-family: Arial;
+    font-weight: 500;
+    font-size: larger;
+}
+
+.nav-sidebar > li > a {
+    color: #80bd01;
+}
+
+.nav-sidebar > .active > a, .nav > li.active > a:hover {
+    background-color: #d9ebb3;
+    color: black;
+}
+
+.nav-sidebar > li:not(.active) > a:hover {
+    background-color: #80bd01;
+    color: white;
+}
+
+/*---------------------------------Right Divs (div-right-child, div-right-child-content)----------------------------------*/
+
+.div-right-child {
+    background-color: white;
+    color: black;
+    /*border-right: 1px solid #eee;*/
+    bottom: 0;
+    display: block;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0px;
+    position: relative;
+    padding: 0 30px 30px 30px;
+    top: 51px;
+    z-index: 1000;
+    text-align: justify;
+}
+
+.nav-tabs {
+    font-weight: bold;
+}
+
+    .nav-tabs > li > a {
+        height: 100%;
+        width: 100px;
+        color: green;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    .nav-tabs > li {
+        height: 100%;
+        width: 100px;
+        border: 1px solid;
+        border-color: lightgray;
+        border-radius: 5px;
+        /*padding:0px;*/
+    }
+
+        .nav-tabs > li.active > a {
+            font-weight: bold;
+            background-color: #d9ebb3;
+            color: black;
+        }
+
+        .nav-tabs > li > a:hover {
+            font-weight: bold;
+            background-color: rgba(127, 188, 1, 1);
+            color: white;
+        }
+
+
+.div-right-child-content {
+    padding: 0px;
+}
+
+.form-fields-form-boundary {
+    border: 1px solid;
+    border-color: lightgray;
+    padding: 10px;
+}
+
+
+
+
+/*-------------------------------handling table--------------------------------------------*/
+
+table, td {
+    border: 1px solid;
+    border-color: lightgray;
+    vertical-align: middle;
+   
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > th {
+    vertical-align: middle;
+    background-color: rgba(100, 100, 100, 1);
+    color: white;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td {
+    background-color: rgba(236, 238, 231, 1);
+    color: black;
+}
+
+.table-striped > tbody > tr:nth-child(2n) > td {
+    background-color: white;
+    color: black;
+}
+
+    .table-striped > tbody > tr:nth-child(2n+1) > td > a,
+    .table-striped > tbody > tr:nth-child(2n) > td > a {
+        color: black;
+        text-decoration: none;
+    }
+
+        .table-striped > tbody > tr:nth-child(2n+1) > td > a:hover,
+        .table-striped > tbody > tr:nth-child(2n) > td > a:hover {
+            color: black;
+            text-decoration: underline;
+        }
+
+        .table-striped > tbody > tr:nth-child(2n+1) > td > a,
+        .table-striped > tbody > tr:nth-child(2n) > td > a  {
+            color:darkolivegreen;
+            /*font-size:medium;*/
+            text-decoration:underline;
+        }
+
+/*-------------------------------handling glyphicone--------------------------------------------*/
+
+.glyphicon-plus {
+    top: 3px;
+    margin-right: 5px;
+    color: #6a5acd;
+    font-size: x-large;
+}
+
+.glyphicon-plus:hover {
+    top: 3px;
+    margin-right: 5px;
+    color: darkblue  ;
+    font-size: x-large;
+}
+
+.glyphicon-remove {
+    top: 3px;
+    margin-right: 5px;
+    color: #ff6347;
+    font-size: x-large;
+}
+
+.glyphicon-remove:hover {
+    top: 3px;
+    margin-right: 5px;
+    color: red;
+    font-size: x-large;
+}
+
+.glyphicon-ok {
+    top: 3px;
+    margin-right: 5px;
+    color: rgba(127, 188, 1, 1);
+    font-size: x-large;
+}
+
+.glyphicon-ok:hover {
+    top: 3px;
+    margin-right: 5px;
+    color: darkgreen;
+    font-size: x-large;
+}
+
+.glyphicon-pencil {
+    top: 3px;
+    margin-right: 5px;
+    color:saddlebrown;
+    /*color: #deb887;*/
+    font-size: x-large;
+}
+
+.glyphicon-pencil:hover {
+    top: 3px;
+    margin-right: 5px;
+    color:firebrick;
+    /*color: #deb887;*/
+    font-size: x-large;
+}
+
+.glyphicon-triangle-bottom {
+    color: white;
+    margin-right: 5px;
+    top:3px;
+}
+
+.glyphicon-chevron-right {
+    color: white;
+    font-size: large;
+}
+
+.glyphicon-align-justify {
+    top: 3px;
+    margin-right: 5px;
+    color: black;
+    font-size: x-large;
+}
+
+.glyphicon-align-justify:hover {
+    top: 3px;
+    margin-right: 5px;
+    color: purple;
+    font-size: x-large;
+}
+.admin-icon-margin {
+    margin-left: 10px;
+}
+
+/*---------------------------------handling fields and buttons------------------------------------------*/
+
+.form-control {
+    color: black;
+    background-color: white;
+    border: 1px solid #c0c0c0;
+}
+
+.custom-submit-btn {
+    height: 100%;
+    text-align: center;
+    background-color: #47841e;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    .custom-submit-btn:hover {
+        background-color: #80bd01;
+        color: white;
+        text-decoration: none;
+    }
+
+/*------------------------------------------MISC--------------------------------------------------*/
+
+.hide-element{
+    color:white;
+}
+
+.float-right {
+    float: right;
+}
+

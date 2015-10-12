@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--<script src="01-js-dom.js"></script>-->
+    <title>Introduction to DOM (Document Object Model)</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+    <h1>Hello wold from static HTML page.</h1>
+    <script>
+
+        document.write("Hello world included dynamically from the JS file !");
+
+        document.write("<ul>");
+
+        for (var i = 0; i < 5; i++)
+        {
+            document.write("<li>")
+            document.write("Dynamically added li " + i);
+            document.write("</li>")
+        }
+
+        document.write("</ul>");
+
+    </script>
+
+    <table>
+        <script>
+            document.writeln("Example of EMBEDDING static and dynamic content together:");
+            for (var row = 0; row < 10; row++)
+            {
+                document.write("<tr>")
+                for (var col = 0; col < 10; col++)
+                {
+                    document.write("<td>");
+                    document.write(row * col);
+                    document.write("</td>");
+                }
+                document.write("<tr>");
+
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+
+    <h2> Simple math - </h2>
+    7+2 = <script>document.write(7 + 2);</script>
+    <h2>what is DOM ?</h2>
+    <p>The browser downloads the document into its file cache and parses it into its memory. The document is parsed into an object representation of the document referred to as the DOM or Document Object Model. The DOM has an object representation of everything that is rendered on the page including the text, font, colors, layout, and white spaces in between. The DOM is the browser's interpretation of the plain text HTML document that is downloaded. Whereas the HTML might have syntax errors or missing elements, improper nesting, missing closing tags, the DOM is the interpretation of the text into a proper object representation of the page. </p>
+    <h2>what is document in javascript ?</h2>
+    <p>With JavaScript, it is possible to programmatically query, interact, and manipulate the DOM. Any modifications to the DOM are reflected onto the page. By changing the DOM, JavaScript can dynamically change what is displayed in the browser. The HTML page is available through JavaScript through an object called document. Through the document object we can use JavaScript to remove or add elements, change element's properties such as background color, font, padding and margins. </p>
+</body>
+</html>

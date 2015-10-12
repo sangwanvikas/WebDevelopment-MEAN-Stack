@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+
+        function sayHello() {
+            alert("hello world");
+        }
+
+        function sayMessage(msg)
+        {
+            alert(msg);
+        }
+
+        function sayInput()
+        {
+            var message = document.getElementById("message");
+            alert(message.value);
+        }
+    </script>
+</head>
+<body>
+    <h1>How to interact with fields using click events  like</h1>   
+       onclick
+        ondblclick
+        ondrag
+        onmousedown
+        onmouseover
+
+    <h2> onClick Event - any field can be made clickable-generally only btn and link</h2>
+    <button onclick="sayHello()"> Click me</button>
+    <button onclick="sayMessage('This is a message ')">Say Message</button>
+
+    <br />
+    <h2> Now retrieve the content of the text field using JS</h2>
+    <input id="message" type="text"/>
+    <button onclick="sayInput()">Say Input</button>
+
+    <br/>
+    <br/>
+<p>You can capture gestures applied to the window itself: onload , onunload, onresize etc. </p>
+
+</body>
+</html>

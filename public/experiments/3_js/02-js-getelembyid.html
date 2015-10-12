@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <h1 id="hello">Hello</h1>
+    <script>
+        //var innerHtml = document.getElementById("hello").innerHTML;
+        //alert(innerHtml);
+
+
+        document.getElementById("hello").innerHTML="Goodbye - overwritten static content using document.getElementById"
+    </script>
+
+    <input id="name" type="text" value="Bob" />
+    <input id="age" type="text" value="23" />
+
+    <script>
+
+        //var age = document.getElementById("age").value;
+        //var name = document.getElementById("name").value;
+        //console.log(age);
+        //console.log(name);
+
+        var age = document.getElementById("age");
+        var name = document.getElementById("name").value;
+        console.log(age.value);
+        console.log(name);
+
+    </script>
+    
+</body>
+</html>

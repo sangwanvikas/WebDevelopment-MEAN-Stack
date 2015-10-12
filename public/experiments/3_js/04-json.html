@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1> JSON -  JAVASCIPT OBJECT NOTATION</h1>
+    <h2>In JavaScript, data is represented using JSON or JavaScript Object Notation. JSON has become a very popular format for representing and sharing data in Web applications.</h2>
+    <h2>One object might have many different parts like Alica can have name, age, salary.</h2>
+    <p> We have name:value pair of properties in the object. var alice ={name: 'abc', age:60, salary:5000}</p>
+   
+
+    <script>
+        var person = {
+            firstName: "Alice",
+            lastName: "Wonderland",
+            salary: 90000
+        };
+
+        var department = {
+            name: "computer science",
+            director: {
+                firstName: "Bob",
+                lastName: "Marley"
+            },
+            dean: "alice",
+            course: [
+                { title: "CS5610" }, { title: "CS5620" }, { title: "CS4610" }
+            ]
+
+        };
+
+        console.log(person);
+        console.log(department);
+
+        var stringRep = JSON.stringify(department);
+        console.log(stringRep);
+
+
+        var stringValue = '{ "name": "computer science", "director": { "firstName": "Bob", "lastName": "Marley" }, "dean": "alice", "course": [{ "title": "CS5610" }, { "title": "CS5620" }, { "title": "CS4610" }] }';
+        var objectRep = JSON.parse(stringValue);
+        console.log(objectRep);
+
+
+    </script>
+
+    <p>Inmemory representation of JSON - <b>JSON.stringify (object -> string)</b> and <b>JSON.parse (string -> object)</b></p>
+</body>
+</html>

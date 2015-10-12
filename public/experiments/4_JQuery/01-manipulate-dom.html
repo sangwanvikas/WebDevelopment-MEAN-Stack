@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Manipulate DOM with jQuery</title>
+    <meta charset="utf-8" />
+    <script src="lib/jquery-1.11.3.min.js"></script>
+    <style>
+        h1 {
+            background-color: red;
+        }
+    </style>
+    <script>
+        // init waits for the entire document to load.
+        $(init);
+
+        function init() {
+            //alert("Welcome to jQuery !!");
+            $("h1").html("Changing HTML content with jQuery -> DOM renders the current state of the web page.");
+
+            // add content to the element we just refer to.
+            $("body").append("Appending content with jQuery !");
+            $("body").append("<p>Appending content with jQuery !<p>");
+
+            var ul = $("<ul>");
+            for (var i = 0; i < 5; i++) {
+                var li = $("<li>");
+                li.append("Line Item " + i);
+                ul.append(li);
+            }
+            $("body").append(ul);
+
+            //$("p").css("background-color", "red");
+            //$("p").css("color", "white");
+
+            $("p")
+                .css("background-color", "red")
+                .css("color", "white");
+
+
+            $("#p2")
+                .css("background-color", "blue")
+                .css("color", "white");
+        }
+    </script>
+
+</head>
+<body>
+    <h1> Welcome to jQuery</h1>
+    <h2> $ is an alias for the jQuery word.</h2>
+    <p>JQuery makes it easy to programmatically manipulate the DOM. To manipulate the DOM first grab the portion of the DOM to be manipulated using the jQuery or its $ alias. Then the DOM can be added, removed, or changed.</p>
+    <h2> Add conten dynamically</h2>
+    <p id="p2">Paragraph</p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="05-external-js-file.js"></script>
+    <title>Source attripute</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+    <h1><code> &lt;script src="00-js-intro.js"&gt;  &lt;/script&gt;</code></h1>
+    <p> JavaScript can be declared and embedded within HTML documents, but it is usually a better idea to declare the scripts outside of the document and then load them separately by refering to them using the src attribute of the script element. </p>
+    <p> MANDATORY TO DO SO FOR ASSIGNMENTS AND PROJECTS </p>
+
+    <p> The code below loads three common JavaScript source files used throughout the course.
+        <ul>
+           <li> &lt;script src="https://code.jquery.com/jquery-1.11.3.min.js"&gt;&lt;/script&gt;</li>
+            <li>&lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"&gt;&lt;/script&gt;</li>
+            <li>&lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"&gt;&lt;/script&gt;</li>
+            <li>&lt;script src="js/main.js"&gt;&lt;/script&gt;</li>
+                
+                
+                
+</ul>
+The first three script elements load three common JavaScript libraries used throughout this course: jQuery, AngularJS, and Bootstrap. 
+    The last script, main.js, is downloaded from the same server where the HTML document is being downloaded. 
+    The remote scripts are loaded from remote servers in separate HTTP GET requests. 
+        <b>These scripts could have been copied onto the local server and then downloaded from there instead of the remote server. </b>
+    Although this might seem safer, it actually is not. 
+    The servers from which they are downloaded from are special repositories called CDNs or Content Delivery Networks that are "guaranteed" to be available, 
+    perhaps even more available than our local servers, but if our server is not available, neither will the enclosing HTML document be available :) 
+    Scripts hosted in CDNs also have a performance advantage over local scripts. Since these are well known URLs, 
+    developers of various other sites tend to use them often as well. Browsers that have visited these other sites will cache them locally and not re-download
+    them when they get to our site. </p>
+    <p></p>
+</body>
+</html>

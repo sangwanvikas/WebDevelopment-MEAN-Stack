@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <script src="lib/jquery-1.11.3.min.js"></script>
+    <script src="lib/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+
+    <script src="01-sortable.js"></script>
+
+    <!--theme is used for the resizable-->
+    <link href="lib/jquery-ui-1.11.4.custom/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../4_JQuery/lib/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css" rel="stylesheet" />
+    <title>jQueryUI Sortable</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+
+    <h1> Welcome to jQuery UI Sortable Experiments.</h1>
+    <h2>Include external JS file only after including minjs file.</h2>
+    <a href="http://api.jqueryui.com/sortable/"> Clink me for referring documentation.</a>
+
+    <h2>.sortable enables a group of DOM elements to be sortable. </h2>
+
+    <h2> Below is the list of sortable UL and LI elemtns</h2>
+    <ul id="firstUL">
+        <li>element 1</li>
+        <li>element 2</li>
+        <li>element 3</li>
+        <li>element 4</li>
+        <li>element 5</li>
+        <li>element 6</li>
+    </ul>
+
+    <h2> List I and List II can be sorted with each other</h2>
+    <div class="col-sm-4">
+        <h3> List I</h3>
+        <ul id="list1">
+            <li>element 1</li>
+            <li>element 2</li>
+            <li>element 3</li>
+            <!--<li>
+                <span class="handle">
+                    <b>I Can't be dragged</b>
+                </span>
+            </li>-->
+            <li>element 4</li>
+            <li>element 5</li>
+            <li>element 6</li>
+        </ul>
+
+    </div>
+    <div class="col-sm-4">
+        <h3> List II</h3>
+        <ul id="list2">
+            <li>element 1</li>
+            <li>element 2</li>
+            <li>element 3</li>
+            <li>element 4</li>
+            <li>element 5</li>
+            <li>element 6</li>
+        </ul>
+
+    </div>
+
+</body>
+</html>

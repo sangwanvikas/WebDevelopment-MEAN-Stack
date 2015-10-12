@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="00-js-intro.js"></script>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+
+    <h1> Intro to javascript</h1>
+    <p>JavaScript can be embedded in an HTML document by using the script element. Usually the script element goes in the head element, but it can appear anywhere in the HTML document and there can be any number of script elements. It is common to declare script elements at the end of the body element to improve SEO (Search Engine Optimization) performance, and page rendering performance. Within the script we can embed JavaScript code such as variables, arrays, objects, loops, branching, and functions. </p>
+    <script>
+
+        //alert("hello from Javascript !");
+
+//var a = 5;
+//var b = 10;
+//var c = a + b;
+//alert(c);
+
+//var fact = 1;
+//for (var i = 1; i <= 5; i++)
+//{
+//    fact = fact * i;
+//}
+//alert(fact);
+
+// arrays in javascript
+var array = [12, 23, 34, 45, 56, 67, 78, 5, 90];
+
+// in JS we will not give int, var etc for the parameter
+function findMinumum(array) {
+
+    var min = array[0];
+
+    for (var i = 0; i < array.length; i++) {
+        // console.log is used to print items in the console of the browser.
+        console.log(array[i]);
+
+        if (min > array[i]) {
+            min = array[i];
+        }
+    }
+    return min;
+}
+
+var calculatedMinValue = findMinumum(array);
+alert(calculatedMinValue);
+    </script>
+</body>
+</html>

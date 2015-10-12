@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Manipulate DOM with jQuery</title>
+    <meta charset="utf-8" />
+    <script src="lib/jquery-1.11.3.min.js"></script>
+    <style>
+        h1 {
+            background-color: red;
+        }
+    </style>
+    <script>
+        // init waits for the entire document to load.
+        $(init);
+
+        function init() {
+         
+            $("#t1").click(t1Click);
+            $("#t2").click(t2Click);
+            p1Showing = true;
+            p2Showing = true;
+
+
+            function t1Click() {
+                if (p1Showing) {
+                    $("#p1").hide();
+                    p1Showing = false;
+                }
+                else {
+                    $("#p1").show();
+                    p1Showing = true;
+                }
+
+            }
+            function t2Click() {
+                if (p2Showing) {
+                    $("#p2").hide();
+                    p2Showing = false;
+                }
+                else {
+                    $("#p2").show();
+                    p2Showing = true;
+                }
+            }
+
+            // 
+        }
+    </script>
+
+</head>
+<body>
+    <h1>Toggling - Show and hide content dynamically  </h1>
+    <p>Use jQuery's .hide() and .show() methods to programmatically hide and show content. When hiding, the content is not removed from the DOM, it is hidden by setting the element's CSS display property to none. The element is shown by removing the diplay property. </p>
+    <p>Click on Titles to toggle the content.</p>
+    <h2 id="t1"> Title 1</h2>
+    <p id="p1">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing </p>
+    <h2 id="t2"> Title 2</h2>
+    <p id="p2">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing </p>
+   
+</body>
+</html>

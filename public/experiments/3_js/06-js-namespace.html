@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="06-js-namespace.js"></script>
+    <title>Javascript Namespace</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>
+        IIFE - Immediately Invoked Function Expression
+    </h1>
+    <h2>Namespace does not populate the the global namespace. Function is passed as a parameter !!</h2>
+    <h3> It is safe for individual libraries. <b>Industries use this design pattern very oftern.</b></h3>
+    <p>
+        To protect variables put them in name spaces :
+        <ul>
+            <li>function(){}</li>
+            <li>(function(){})</li>
+            <li><b>(function(){<br /><br />/* your code */<br /><br />})();</b></li>
+        </ul>
+    <p> It means that anything declared inside thses finctions are not usable anywhere else</p>
+    <p> Downloading scripts from various sources and from different vendors is a very powerful feature that allows developers to quickly enhance Web site behaviours. There are although potential pitfals. When a JavaScript source is downloaded it is immediately executed. If a source file declares variables and functions, these are made available in the global namespace. They can be readily invoked from anywhere in other scripts. If we download scripts from various places, it is possible that different scripts declare variables or functions with the same name creating a name space collision. Scripts loaded last can potentially re-declare names declared by earlier scripts.
+
+Namespace collition can be easily avoided by creating a namespace using a common JavaScript design pattern: Immediately-Invoked Function Expressions or IIFE. To create a namespace wrap your code within an IIFE as shown below: </p>
+
+</body>
+</html>

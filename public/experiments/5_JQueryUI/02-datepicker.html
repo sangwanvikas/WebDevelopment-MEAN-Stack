@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="02-datepicker.js"></script>
+    <script src="lib/jquery-1.11.3.min.js"></script>
+    <script src="lib/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <!-- included to give better look to the datepicker box. -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/cupertino/jquery-ui.css" />
+    
+
+    <title>jQueryUI Datepicker</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+
+    <h1> Welcome to jQuery UI DatePicker.</h1>
+    <h2>Include external JS file only after including minjs file.</h2>
+    <a href="http://api.jqueryui.com/datepicker/"> Clink me for the reference.</a>
+
+    <h2> Datepicker behaves differently for different browsers !!</h2>
+   
+    <div class="col-sm-4">
+       <input type="text" id="datepicker" />
+
+    </div>
+
+    <script>
+
+
+        $("#datepicker").datepicker();
+
+        $("#date").datepicker();
+
+
+    </script>
+
+    <input type="text" id="date" />
+
+</body>
+</html>

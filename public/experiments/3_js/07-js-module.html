@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="07-js-module-1.js"></script>
+    <script src="07-js-module-2.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <title>Module</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>
+        Modules - keep namespaces separately.
+    </h1>
+    <h2>
+        jQuery's global variable can be used anywhere, Once we load jQuery lib then it can be invoked anywhere.
+        jQuery reduces the colliding probability with another library through IIFE.
+
+    </h2>
+    <h3>
+        What if I write module using newer version of jQuery, but workpress module uses older version of jQuery? Since I am declaring namespace and
+        workpress is also declaring namespaces, these two separate namespaces can also collide
+    </h3>
+
+    <h1>Assign IIFE to a variable to export functionalities of this module outside. Since the variable is outside of the IIFE, it can be used anywhere outside.</h1>
+    <h2>Inside this IIFE, we will create our own API, and return it.</h2>
+    <h3>Check out following two JS files in the directory.</h3>
+
+    <ul>
+        <li>07-js-module-1.js</li>
+        <li>07-js-module-2.js</li>
+    </ul>
+
+    <input id="val1" type="text" value="5" />
+    <input id="val2" type="text" value="10" />
+    <button id="sum-btn" class="btn btn-success" onclick="returnSum()">Sum</button>
+    <input id="final-val" type="text" />
+
+
+</body>
+</html>
