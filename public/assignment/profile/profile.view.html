@@ -1,0 +1,47 @@
+﻿<div id="" class="div-right-child col-sm-10 col-sm-offset-2  col-md-10 col-md-offset-2 main">
+    <h1 class="page-header col-sm-11 col-sm-offset-1 col-md-9 col-md-offset-1"> Profile</h1>
+    <div class="div-right-child-content col-sm-12  col-md-12">
+        <form class="form-horizontal col-sm-12 col-sm-offset-0 col-md-12 col-md-offset-0">
+            <div class="form-group">
+                <label class="col-sm-2 col-md-2 control-label">Username:</label>
+                <div class="col-sm-10 col-md-8">
+                    <input ng-model="usernameModel" class="form-control" type="text" placeholder="Username" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 col-md-2  control-label">Password:</label>
+                <div class="col-sm-10 col-md-8 ">
+                    <input ng-model="passwordModel" class="form-control " type="password" placeholder="Password" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 col-md-2  control-label">First Name:</label>
+                <div class="col-sm-10 col-md-8">
+                    <input ng-model="firstNameModel" class="form-control " type="text" placeholder="First Name" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 col-md-2  control-label">Last Name:</label>
+                <div class="col-sm-10 col-md-8">
+                    <input ng-model="lastNameModel" class="form-control " type="text" placeholder="Last Name" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 col-md-2  control-label">Email:</label>
+                <div class="col-sm-10 col-md-8">
+                    <input ng-model="emailModel" class="form-control" type="text" placeholder="Email" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 col-md-2"></label>
+                <a href="" ng-click="update(usernameModel,passwordModel,firstNameModel,lastNameModel,emailModel)" class="col-sm-10 col-md-8">
+                    <div href="" class=" col-sm-10 col-md-10 form-control custom-submit-btn">
+                        Update
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </div>
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

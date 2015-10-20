@@ -71,15 +71,18 @@
     font-size: larger;
 }
 
+/*non active and non hover*/
 .nav-sidebar > li > a {
     color: #80bd01;
 }
 
-.nav-sidebar > .active > a, .nav > li.active > a:hover {
+/*active and hover  + active non hover*/
+.nav-sidebar > li.active > a,  .nav > li.active > a:hover {
     background-color: #d9ebb3;
     color: black;
 }
 
+/*non-active hover*/
 .nav-sidebar > li:not(.active) > a:hover {
     background-color: #80bd01;
     color: white;
@@ -149,8 +152,6 @@
 }
 
 
-
-
 /*-------------------------------handling table--------------------------------------------*/
 
 table, td {
@@ -201,49 +202,49 @@ table, td {
 
 .glyphicon-plus {
     top: 3px;
-    margin-right: 5px;
+    margin-right: 10px;
     color: #6a5acd;
     font-size: x-large;
 }
 
 .glyphicon-plus:hover {
     top: 3px;
-    margin-right: 5px;
+    margin-right: 10px;
     color: darkblue  ;
     font-size: x-large;
 }
 
 .glyphicon-remove {
     top: 3px;
-    margin-right: 5px;
+     margin-right: 10px;
     color: #ff6347;
     font-size: x-large;
 }
 
 .glyphicon-remove:hover {
     top: 3px;
-    margin-right: 5px;
+     margin-right: 10px;
     color: red;
     font-size: x-large;
 }
 
 .glyphicon-ok {
     top: 3px;
-    margin-right: 5px;
+     margin-right: 10px;
     color: rgba(127, 188, 1, 1);
     font-size: x-large;
 }
 
 .glyphicon-ok:hover {
     top: 3px;
-    margin-right: 5px;
+     margin-right: 10px;
     color: darkgreen;
     font-size: x-large;
 }
 
 .glyphicon-pencil {
     top: 3px;
-    margin-right: 5px;
+     margin-right: 10px;
     color:saddlebrown;
     /*color: #deb887;*/
     font-size: x-large;
@@ -251,37 +252,38 @@ table, td {
 
 .glyphicon-pencil:hover {
     top: 3px;
-    margin-right: 5px;
-    color:firebrick;
+     margin-right: 10px;
+    /*color:firebrick;*/
     /*color: #deb887;*/
     font-size: x-large;
 }
 
 .glyphicon-triangle-bottom {
     color: white;
-    margin-right: 5px;
+     margin-right: 10px;
     top:3px;
 }
 
 .glyphicon-chevron-right {
     color: white;
-    font-size: large;
+    font-size: medium;
 }
 
 .glyphicon-align-justify {
     top: 3px;
-    margin-right: 5px;
+     margin-right: 10px;
     color: black;
     font-size: x-large;
 }
 
 .glyphicon-align-justify:hover {
     top: 3px;
-    margin-right: 5px;
+     margin-right: 10px;
     color: purple;
     font-size: x-large;
 }
 .admin-icon-margin {
+    /*margin-left:0px;*/
     margin-left: 10px;
 }
 
@@ -301,6 +303,8 @@ table, td {
     text-decoration: none;
     font-weight: bold;
 }
+
+
 
     .custom-submit-btn:hover {
         background-color: #80bd01;

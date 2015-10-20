@@ -1,0 +1,16 @@
+﻿<div ng-controller="SidebarController" class="col-sm-2 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+        <li ng-class="{'active':$location.url().indexOf('home') != -1}">
+            <a href="#/home">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li ng-class="{'active':$location.url().indexOf('profile') != -1}">
+            <a href="#/profile">Profile<span class="sr-only">(current)</span></a>
+        </li>
+        <li ng-class="{'active':$location.url().indexOf('admin') != -1}">
+            <a href="#/admin">Admin<span class="sr-only">(current)</span></a>
+        </li>
+        <li ng-class="{'active':$location.url().indexOf('form') != -1}">
+            <a href="#/form">Forms<span class="sr-only">(current)</span></a>
+        </li>
+    </ul>
+</div>

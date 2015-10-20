@@ -1,0 +1,43 @@
+﻿<div id="" class="div-right-child col-sm-10 col-sm-offset-2  col-md-10 main col-md-offset-2">
+    <h1 class="page-header col-sm-11 col-sm-offset-1 col-md-9 col-md-offset-1"> Forms</h1>
+    <ul class="nav nav-tabs col-sm-11 col-sm-offset-1 col-md-9 col-md-offset-1">
+        <li role="presentation" ng-class="{'active':$location.url().indexOf('form') != -1}" ><a href="#/form">Forms</a></li>
+        <li role="presentation" ><a href="#/form-fields">Fields</a></li>
+    </ul>
+    <div class="div-right-child-content table-responsive col-sm-11 col-sm-offset-1  col-md-9 col-md-offset-1">
+        <table class="table table-striped">
+            <tr>
+                <th>
+                    <a href="#"><span class="glyphicon glyphicon-triangle-bottom "></span></a>
+                    <span>Form Name</span>
+                </th>
+                <th class="col-md-3">
+                    <a href="#"><span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                    <span>Action</span>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <input ng-model="formName" class="col-sm-12 form-control" type="text" placeholder="name" />
+                </td>
+                <td>
+                    <div>
+                        <button ng-click="addForm(formName)"><span class="admin-icon-margin glyphicon glyphicon-plus"></span></button>
+                        <button ng-click="updateForm(formName)"><span class="admin-icon-margin glyphicon glyphicon-ok"></span></button>
+                    </div>
+                </td>
+            </tr>
+            <tr ng-repeat="form in forms">
+                <td>
+                    <a class="link-in-table" href="form-fields.html" >{{form.formname}}</a>
+                </td>
+                <td>
+                    <div class="div-admin-icons">
+                        <button ng-click="removeForm($index)"><span class="admin-icon-margin glyphicon glyphicon-remove"></span></button>
+                        <button ng-click="selectForm($index, formName)" href=""><span class="admin-icon-margin glyphicon glyphicon-pencil"></span></button>
+                    </div>
+                </td>
+            </tr>            
+        </table>
+    </div>
+</div>
