@@ -5,7 +5,7 @@ This project is being developed as a part of the course CS5610 taught by Prof. J
 3. Hosted application on OpenShift (PaaS).
 
 Current status : 
-Please visit http://cs5610-sangwanvikas.rhcloud.com/
+Please visit http://cs5610-sangwanvikas.rhcloud.com/assignment
 
 Well, If you are still reading this readme file then I would love to tell you more about this project. It is a Web application I will be building throughout the assignments is called Form Maker. It will consist of a Website that allow users to create forms and share them on the Web as single pages or embedded in their own Web pages. Users who will create forms are called Developers. And other users that visit the Web pages or form pages can then fill in and submit the forms are calles Submitters. Developers can login to their account and see the results in tabular format or download them as CSV files.
 
