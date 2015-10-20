@@ -1,0 +1,297 @@
+﻿<h1>Register</h1>
+<p> Content has been loaded from the Register.html page</p>
+
+<div class="container row col-md-12" style="height:550px;background-color:mistyrose;overflow-y:auto">
+
+    <h1>ngRoute</h1>
+    <h2>1. ng-vew </h2>
+    <ul>
+        <li><p> Add CDN for routing</p></li>
+        <li><p><b>ng-vew </b>will be the placeholder. Angular directive which is apart of Routiing module. It is used to load content dynamically in this div</p></li>
+        <li>
+            In HTML
+            <pre>&lt; div <u><b>ng-view</b></u>&gt;&lt;/div&gt;</pre>
+        </li>
+        <li>Create partial HTML pages. Just a snippet of HTML, not full blown because it will be embedded in the larger doc with all CDNs, headers, footers etc.</li>
+
+    </ul>
+    <hr />
+    <hr />
+
+    <h2>How to configure?</h2>
+    <h3>2. ["ngRoute"], 3. $routeProvider</h3>
+    <ul>
+        <li>
+            List routiing module name (ngRoute) in the array of dependencies.
+            In JS:
+            <pre>angular.module("ng-app-name-given-in-HTML", <u><b>["ngRoute"]</u></b>)</pre>
+        <li><b>["ngRoute"] </b>allows to implement navigation in the single page application.</li>
+
+        <li>
+            After declaring <b>.module</b> we declare <b>.config</b>. It is also the part of angular API. It allows you to
+            configure i.e. before applciation begins or we do anything we setup certain things without looking at DOM/HTML.
+        </li>
+        <li>
+            To configure we define a function. Anonyous function which is being passed as an argument to the <b>.configure</b>.
+            In that function config will pass you whatever configuration you want and the way you have defined.
+        </li>
+        <li>
+            <b>$routeProvider</b> There are couple of providers that allow to configure the routing. We use a specific name to inject. $routeProvide is provided to you using DoI.
+            <pre>
+(function(){
+  angular
+    .module("WhiteBoardApp", ["ngRoute"])
+    .config(function(<u><b>$routeProvider</u></b>){
+      $routeProvider
+        .when("/", {
+          templateUrl: "home.html"
+        })
+        .when("/profile", {
+          templateUrl: "profile.html"
+        })
+        .when("/admin", {
+          templateUrl: "admin.html"
+        })
+        .otherwise({
+          redirectTo: "/"
+        });
+    });
+})();
+</pre>
+        </li>
+        <li>
+            After specifying <b>$routeProvide </b><u> we can define all the mappings</u> like If the URL after the / you see a slash, the content you should inject in ng-view should be the Home.html partial document.
+            We are loading the content dynamically on demand when you see changes in the URL. It gives the same functionality of the navigation.
+        </li>
+        <li></li>
+    </ul>
+
+    <hr />
+    <hr />
+
+    <h2>ng Route Location</h2>
+    <h3>4. $locationService - is written next to the $scope in controller method</h3>
+    <p>State of the aplication is entirely determined by the URL. URL can also be used to highlight links in the navigation based on what page you are looking at.</p>
+    <ul>
+        <li> We ask the main controller for the another service which gives information like where am i , what is my current location.</li>
+        <li>As we know <b>$scope</b> is used to represent the world in a section what you are responsible for. And we can add variables to the $scope like $scope.hell="dfdf"</li>
+        <li>
+            Send location information to the ViewIn JS :<pre>.controller("NavController", function($scope, $location){
+            $scope.$location = $location; // you can choose any name you want
+        });</pre>
+            It is sent as a object to ui.
+        </li>
+        <li>In HTML <pre><code ng-non-bindable>{{$location.url()}}</code></pre></li>
+    </ul>
+
+
+    <h3>5. ng-class</h3>
+    <ul>
+        <li> takes help of $location service</li>
+        <li>Now use it for logically highlight links on the View. So instead of harcoding controls with <b>.active</b> class, assign logically calculative class to the controls</li>
+        <li> It uses name:Value pair for assigning claas i.e. (className:basedOnCondition)</li>
+        <li>
+            In HTML:
+            <pre>
+&lt;li <b>ng-class="{'active':$location.url().indexOf('register') != -1}"</b>&gt;&lt;a href="#/register"&gt;Register&lt;/a&gt;&lt;/li&gt;&lt;/a&gt;
+</pre>
+        </li>
+    </ul>
+
+    <hr />
+    <hr />
+
+    <h3> 6. Breaking config files into two files</h3>
+    <ul>
+        <li>One declare <b>dependency</b> and oher declared <b>configuration</b></li>
+        <li>We write <b>.module</b> and <b>.config</b> methods in separate files to make it more maintainable.</li>
+        <li>
+            In <b> config.js</b> file we don't  mention the dependency. Therefore we are not going to hav ["ngRoute"] in it.
+            This file says that the module which has already been earlier, I'll just provide configuration it. That's it and I (config.js)
+            don't know about those depedencies.
+        </li>
+        <li>Separating both of them, app.js(or MainController.js) will concentrate only on declaring the module instead of configurign it as well. And say its dependency is ["ngRoute"]</li>
+        <li>
+            <b>app.js</b>
+<pre>(function () {
+    angular
+        .module("WhiteBoardApp", ["ngRoute"]);
+})();
+</pre>
+        </li>
+
+        <li>
+            <b>config.js</b>
+<pre>(function () {
+    angular
+        .module("WhiteBoardApp") // We don't put ["ngRoute"] here because it has been taken care while declaring "WhiteBoardApp" module in MainController.js
+        .config(function ($routeProvider) {
+            console.log("10-ng-routing.js");
+            $routeProvider
+            .when("/", {
+                templateUrl: "home.html"
+            })
+            .when("/home", {
+                templateUrl: "home.html"
+            })
+            .when("/login", {
+                templateUrl: "login.html"
+            })
+            .when("/logout", {
+                templateUrl: "logout.html"
+            })
+            .when("/register", {
+                templateUrl: "register.html"
+            })
+            .when("/info", {
+                templateUrl: "info.html"
+            })
+            .when("/course", {
+                templateUrl: "course.html"
+            })
+            .otherwise({
+                redirectTo: "/"
+            });
+        })
+})();
+</pre>
+        </li>
+
+    </ul>
+    <h2>7. ng Route Controllers</h2>
+    <h4>For reference check out <b>courseController.js file</b></h4>
+    <ul>
+        <li>
+            Overall controller. Currently the only thing it is doing is providing the location to the View. <b>But anything that is common to all could go into this controller.</b>
+        <li>like the track of currently logged in user.</li>
+        <li>Controller's responsibility is to fetch the data and give it to the view. And view will operate on the data, send to the controller so that controller can persist the data.</li>
+        <li> Controller is the one who does shuffling back and forth the data.</li>
+        <li><b>Create a controller separately for one particular page. And give a specific name to it. WIll be used to associate this controller with the partial page for which it was created.</b></li>
+        <li>After creating this controllerJS file, make its reference to the index.html page</li>
+        <li>
+            And when that page loads, i also want to load a controller for it. Need to mention in .when(/pageName). In <b>config.js</b>
+            <pre>
+.when("/courseEdit", {
+                templateUrl: "courseEdit.html",
+                controller: "CourseController"
+            })
+</pre>
+
+        </li>
+        <li>Now like anyother vew and controller, we can pass data back and forth to the view.</li>
+        <li>
+            {{$index}} Vs $index during href and ng-click respectively.</li>
+        <li> Adding /:count in config.js, we will get index in the page URL
+            <pre>
+.when("/courseEdit/:count", {
+                templateUrl: "courseEdit.html",
+                controller: "CourseController"
+            })
+</pre></li>
+        
+    </ul>
+
+    <hr />
+    <hr />
+
+    <h2>8. Sharing data across the controller</h2>
+    <h3>8.1. $routeParam (in ControllerJS), and 8.2. ng-route (in HTML pages) </h3>
+    <ul>
+        <li>
+            Just like $scope and $locationService we used before we have one more service which give route parameters.
+        </li>
+        <li>
+            When it navigates to another page (say from course to the editcourse), the placeholder is going to be parsed out. And it is going to 
+            be associated with the 'count' variable. And it is going to be available to me through $routParams.
+            <pre>
+angular
+.module("WhiteBoardApp")
+.controller("CourseEditController", CourseEditController);
+function CourseEditController($scope, $routeParams)
+{
+    alert($routeParams.count);
+}
+</pre>
+        </li>
+    </ul>
+
+    <h3>9. Factory</h3>
+    <p>Creating Services
+
+Application developers are free to define their own services by registering the service's name and service factory function, with an Angular module.</p>
+    <p>Allows to create a service that can be shared across many different place. <b>All services like $scope, $locationService and $routeParam are created using this type of service.</b></p>
+    <ul>
+        <li><a href="https://docs.angularjs.org/guide/services"> Reference Angular documentation.</a></li>
+        <li>
+            we write functions  that operateon data or for connection string, caching , fetching and sending back data to the DB etc. for CRUD operations etc.It is then sent to the controller and then finally to the view.
+        </li>
+        <li>Data management at the browser. If we are fetcihng a data from Web API or DB , it will be here.</li>
+        <li><h4>9.1</h4>In CourseService.JS file we wrote our own service
+        <pre>(function () {
+    angular
+    .module("WhiteBoardApp")
+    .factory("CourseService", CourseService);
+    function CourseService() {
+        var courseData = [
+       { title: "JAVArrrrrrrrrrrr", seats: 12, start: new Date() },
+       { title: "C#", seats: 12, start: new Date() },
+       { title: "Node JS", seats: 12, start: new Date() },
+       { title: "Angular JS", seats: 12, start: new Date() }
+        ]
+        // here code goes for connection string, caching , fetching and sending back data to the DB etc. for CRUD operations etc.
+        var service = {
+            getAllCourses: getAllCourses
+        };
+        return service;
+        
+        function getAllCourses ()
+        {
+            // we can have AJAX call here to fetch the data. SO THIS IS A ASYNC call, so it is not going to return the courses right away.
+            // And in the call back i'll pass you the data later on. Therefore HW says use call backs. TIll now we relly don't need it until we go to the call back 
+            // pr premises.
+            return courseData;
+        }
+    }
+})();
+</pre>        
+        </li>
+        <li> <h4>9.2</h4>
+            For fetching data in CourseController.JS we call <b>CourseController just like $scope</b> to call <b>CourseController.getAllCourses()</b>
+            <pre>(function () { 
+angular
+.module("WhiteBoardApp")
+.controller("CourseController", CourseController);
+function CourseController($scope, CourseService)
+{
+    $scope.helloCourse = "Hello from course controller.";
+   
+    // go through the service to get data
+    $scope.courses = CourseService.getAllCourses();
+    $scope.removeCourse = function(index){
+        console.log(index);
+        $scope.courseData = courseData.splice(index, 1);
+    }
+}
+})();
+</pre>
+
+
+        </li>
+        <li>
+            will be fixing commented thing, mentioned in the jusut above code snippet.
+        </li>
+    </ul>
+
+    <hr />
+    <hr />
+
+    <h2>10. Dir Structure</h2>
+    <ul>
+        <li>
+            Everything related to course will go in one folder. Say for Course course.html, courseEdi.html, courseController.js, courseService.js will go to one directory. And after
+            doing so we need to change the reference for the JS files as well to the index page.
+        </li>
+        <li>Naming convention : Names will be like Entity.Controller.js, Course.Form.View.html</li>
+    </ul>
+
+</div>

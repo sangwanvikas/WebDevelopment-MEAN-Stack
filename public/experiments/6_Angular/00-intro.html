@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html ng-app="WhiteBoardApp">
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular.js"></script>
+    <script src="00-intro.js"></script>
+    <title>Intro-Angular</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div ng-controller="div1WhiteBoardController">{{hello}}</div>
+    <h2>1. AngularJS</h2>
+    <ul>
+        <li>AngularJS extends the HTML language by declaring several <b><u>new attributes called directives.</u></b></li>
+        <li>It declares HTML element as a part of an Angular application.</li>
+        <li>The name declared by the directive must match the name of an <b>AngularJS module</b> implemented in a separate JavaScript file. </li>
+        <li>The <b>AngularJS library declares a global object called angular </b> allows creating applications, configurations, controllers, and other AngularJS artifacts that constitute an AngularJS application. </li>
+        <li>Angular is broken into various modulels the way java,c#  is broken in to various classes. </li>
+    </ul>
+    
+    <hr>
+    <hr>
+
+    <h2>2. Implement the AngularJS Application (ng-App & .module)</h2>
+    <h3>In HTML: <u><b>&lt;html ng-app="WhiteBoardApp"&gt;</u></b></h3>
+    <h3>In JS  :  <b><u>var app= angular.module("HelloWorldApp", []); </u></b></h3>
+    <h3>.module in JS</h3>
+    <ul>
+        <li> Load AngularJS library</li>
+
+        <li>AngularJS application is implemented using the .module() method.</li>
+        <li>The .module() method takes two arguments.</li>
+        <li>The first argument is a string denoting the name of the application</b> The second argument is an array of other modules the application depends on.</li>
+        <li>The array can be empty if the application does not depend on other modules.</li>
+        <li>There can be any number of modules depending on other modules in a dependency hierarchy.</li>
+    </ul>
+
+    <hr> 
+    <hr>
+
+    <div ng-controller="WhiteBoardController">
+    <h2> 3. Declare a Controller for an HTML Area (ng-controller & .controller)</h2>
+        <h3> 3.1 <b>In HTML: <u>&lt;div ng-controller="WhiteBoardController"&gt;</u></b></h3>
+    <ul>
+        <li>The HTML in an AngularJS application is considered the view of a Web application. </li>
+        <li>AngularJS controllers are responsible for providing data and logic that the a view renders dynamically. </li>
+        <li>Controllers can be responsible for an entire page or a subset of a page. They can be bound to a specific HTML element which will the scope of the controller. </li>
+        <li><u>HTML outside the element bound to a controller is outside of the scope of the controller. </u></li>
+    </ul>
+
+        <hr>
+
+        <h3>Implement the Controller in JS file</h3>
+        <h3> 3.2 In JS  :  <b><u>app.controller("WhiteBoardController", FunctionName);</u></b></h3>
+        <ul>
+            <li>Use the <b>.controller()</b> method to name and declare a function that implements the controller.</li>
+            <li>The .controller() method takes two arguments. The first argument is a string used to name the controller. The second argument is the function that implements the controller.</li>
+
+        </ul>
+        </div>
+
+    <hr>
+    <hr />
+
+    <h2> 4. Controller Sends Data to View</h2>
+    <ul>
+        <li>The controller is responsible for controlling the view by interacting with user events, implementing client side logic, retrieving data from the client, client side navigation, and retrieving data from the server, and providing data to the client.</li>
+        <li>To provide data to the client browser, the controller can request an object representation of the HTML it is responsible for, a representation of its scope of influence. </li>
+        <li><b><u>To do this, the function that implements the controller declares a variable specifically called $scope. The function can then refer to named placeholders and objects declared in view.</u></b></li>
+        <li><b>$scope.pvalue</b> assigns value to the <u>pvalue property of the scope</u>. You can think of the scope and its properties as the data which is used to render the view. The scope is the single source-of-truth for all things view related.</li>
+        <li>Similarly the controller can assign behavior to scope as seen by the sayHello method</li>
+        <li><a href="https://docs.angularjs.org/guide/scope">$scope refereance</a></li>
+    </ul>
+    <hr>
+    <hr />
+    <p>
+        One MODULE (ng-App) can have many CONTROLLERS(ng-controller). And each CONTROLLER will have only one app.controller("ng-controllername","fuctionName")
+    </p>
+    
+</body>
+</html>

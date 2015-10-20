@@ -1,0 +1,32 @@
+﻿<h1>Course</h1>
+<p>Content is being loaded from the Course.html page</p>
+{{helloCourse}}
+{{courses}}
+
+ $index is a local variable that changes when we iterate over the collection
+<table class="table table-striped ">
+    <thead>
+        <tr>
+            <td>Title</td>
+            <td>Seats</td>
+            <td>Start Date</td>
+            <td>&nbsp;</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="course in courses">
+            <td>{{course.title}}</td>
+            <td>{{course.seats}}</td>
+            <td>{{course.start  | date}}</td>
+            <td>
+                <button ng-click="removeCourse($index)" class="btn btn-danger">Remove</button> 
+                <!-- here index is not in the cureley brackets because  it is  the part of the angular framework syntax, so it knows how to parse it. -->
+            </td>
+            <td>
+                <a href="#/courseEdit/{{$index}}" class="btn btn-primary">Edit</a> 
+                <!-- here {{index}} is in the cureley brackets because here it is not the part of the angular framework syntax, it does not know how to parse it. -->
+            </td>
+        </tr>
+    </tbody>
+
+</table>

@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html ng-app="WhiteBoardApp">
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular.js"></script>
+    <script src="01-ng-click.js"></script>
+    <title>ng-click</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <a href="http://fdietz.github.io/recipes-with-angular-js/introduction/responding-to-click-events-using-controllers.html">reference for ng-click</a>
+    <div ng-controller="ngClickController" class="row col-md-12">
+        <input ng-click="sayHello()" class="col-md-2" type="button" value="say Hello" />
+        <input type="text" class="col-md-2" ng-model="hello" />
+        <p> {{hello}} </p>
+        <br />
+        <ul>
+            <li>
+                In Html:
+                <pre>&lt;input ng-click="sayHello()" class="col-md-2" type="button" value="say Hello" /&gt;
+&lt;input type="text" class="col-md-2" ng-model="hello" / &gt;
+&lt;p&gt;<code ng-non-bindable=""> {{hello}}</code> &lt;/p&gt;</pre>
+            </li>
+            <li>
+                In JS:
+                <pre> $scope.sayHello = function(){
+        console.log("sayHello");
+        $scope.hello = "Hello World from Angular JS";
+    }</pre>
+            </li>
+        </ul>
+        <hr />
+        <hr />
+
+        <input ng-click="sayBye('StaticParameter')" type="button" value="say Bye" class="col-md-2" />
+        <input type="text" class="col-md-2" ng-model="saybye" />
+        <p>{{saybye}}</p>
+        <br /><br/>
+        <ul>
+            <li>
+                In Html:
+                <pre>&lt;input ng-click="sayBye('StaticParameter')" type="button" value="say Bye" class="col-md-2" /&gt;
+&lt;input type="text" class="col-md-2" ng-model="saybye" / &gt;
+&lt;p&gt;<code ng-non-bindable=""> {{saybye}}</code> &lt;/p&gt;</pre>
+            </li>
+            <li>
+                In JS:
+                <pre>  $scope.sayBye = function (str) {
+        $scope.saybye = " Good bye " + str;
+    }</pre>
+            </li>
+        </ul>
+        <hr />
+        <hr />
+
+        <input ng-click="DP(dynamicParameter)" type="button" value="Dynamic Parameter" class="col-md-2" />
+        <input type="text" class="col-md-2" ng-model="dynamicParameter" placeholder="write name to pass as param" />
+        <p>{{dynamicParameter}}</p>
+        <br/><br/>
+        <ul>
+            <li>
+                In Html:
+                <pre>&lt;input ng-click="DP(dynamicParameter)" type="button" value="Dynamic Parameter" class="col-md-2" /&gt;
+&lt;input type="text" class="col-md-2" ng-model="dynamicParameter" placeholder="write name to pass as param" / &gt;
+&lt;p&gt;<code ng-non-bindable=""> {{saybye}}</code> &lt;/p&gt;</pre>
+            </li>
+            <li>
+                In JS:
+                <pre>  $scope.sayBye = function (str) {
+        $scope.saybye = " Good bye " + str;
+    }</pre>
+            </li>
+        </ul>
+
+        <hr />
+        <hr />
+
+        <div class="container">
+            <label>concatenate values in textbox 1 and textbox 2</label>
+            <input type="text" class="col-md-2" ng-model="number1" placeholder="enter number 1" />
+            <input type="text" class="col-md-2" ng-model="number2" placeholder="enter number 2" />
+            <input type="text" class="col-md-2" value="{{number1 + number2}}" />
+        </div>
+
+        <ul>
+            <li>
+                In Html:
+                <pre>&lt;type="text" class="col-md-2" ng-model="number1" placeholder="enter number 1"  /&gt;
+&lt;type="text" class="col-md-2" ng-model="number2" placeholder="enter number 2" / &gt;
+ &lt;type="text" class="col-md-2" value="<code ng-non-bindable=""> {{number1 + number2}}</code>" / &gt;  </pre>
+            </li>
+            <li>
+                In JS:
+                <pre>  $scope.sayBye = function (str) {
+        $scope.saybye = " Good bye " + str;
+    }</pre>
+            </li>
+        </ul>
+
+
+
+        <hr />
+        <hr />
+        <p>
+            <input ng-click="sayCounter()" type="button" ng-model="counter" value="Counter" class="col-md-2" />{{counter}}
+            <input ng-click="counter=0" type="button" ng-model="counter" value="Reset" class="col-md-2" />
+        </p>
+        <br />
+
+
+       
+    </div>
+    
+</body>
+</html>

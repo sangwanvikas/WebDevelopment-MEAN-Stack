@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html ng-app="WhiteBoardApp">
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular.js"></script>
+    <script src="02-ng-model.js"></script>
+    <title>ng-model</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div ng-controller="ngClickController" class="row col-md-12">
+        <h1>ng-model</h1>
+        <a href="http://portal-cs5610online.rhcloud.com/portal/index.html#/modules/3/AngularJS_examples/2">Reference for ng-model</a>
+
+        <h2>1. Model set by Controller</h2>
+        <p>{{hello}}</p>
+        <ul>
+            <li><pre>In HTML page :   <code ng-non-bindable="">{{hello}}</code></pre></li>
+            <li><pre>In JS page : <b>$scope.hello = "This text is set by the cotroller. model name is {{hello}}";</b></pre></li>
+        </ul>
+        <hr />
+        <hr />
+        <h2>2. Model bound to Template</h2>
+        <input type="text" class="col-md-2" ng-model="modelBoundToTemplate" />
+        <p>You have typed : {{modelBoundToTemplate}}</p>
+        <ul>
+            <li>In HTML : <pre>&lt;input type="text" class="col-md-2" ng-model="modelBoundToTemplate" /&gt;
+You have typed : <code ng-non-bindable="">{{modelBoundToTemplate}}</code>}'}</li>
+        </ul>
+        <hr />
+        <hr />
+
+        <h2>Model Sent Through Event Handler</h2>
+        <input ng-model="model1_For_Input_Param" type="text" placeholder="enter text" />
+        <input type="button" ng-click="clickMe(model1_For_Input_Param)" value="Clicke me" />
+        {{model2_Sent_Through_Event_Handler}}
+
+        <ul>
+            <li>
+                In HTML : <pre>
+&lt;input ng-model="model1_For_Input_Param" type="text" placeholder="enter text" /&gt;
+&lt;input type="button" ng-click="clickMe(model1_For_Input_Param)" value="Clicke me" /&gt;
+<code ng-non-bindable=""> {{model2_Sent_Through_Event_Handler}}</code>
+</pre>
+            </li>
+            <li>
+                In JS : <pre>$scope.clickMe = function (str) {
+$scope.model2_Sent_Through_Event_Handler = str;
+}</pre>
+            </li>
+        </ul>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html ng-app="WhiteBoardApp">
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular-route.js"></script>
+
+    <!--<script src="10-ng-routing.js"></script> It is broken into app.js and config.js-->
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+
+    <script src="MainController.js"></script>
+    <script src="courseController.js"></script>
+    <script src="courseEditController.js"></script>
+    <script src="courseService.js"></script>
+    <title>ng-routiing</title>
+    <meta charset="utf-8" />
+</head>
+<body ng-controller="MainController">
+    Your current location is  :   {{$location.url()}}
+    <h1>ngRouter</h1>
+    <div class="container" style="background-color:orange">
+        <ul class="nav navbar-nav pull-right nav-pills">
+            <li ng-class="{'active':$location.url().indexOf('register') != -1}"><a href="#/register">Register</a></li>
+            <li ng-class="{'active':$location.url().indexOf('login') != -1}"><a href="#/login">Login</a></li>
+            <li ng-class="{'active':$location.url().indexOf('logout') != -1}"><a href="#/logout">Logout</a></li>
+            <li ng-class="{'active':$location.url().indexOf('info') != -1}"><a href="#/info">What is ngRoute</a></li>
+        </ul>
+    </div>
+    <div class="col-sm-2 col-md-1 sidebar" style="background-color:lightgoldenrodyellow">
+        <ul class="nav nav-sidebar">
+            <li ng-class="{'active':$location.url().indexOf('home') != -1}"><a href="#/home">Home</a></li>
+            <li ng-class="{'active':$location.url().indexOf('course') != -1}"><a href="#/course">Course</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="col-md-10" ng-view>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
