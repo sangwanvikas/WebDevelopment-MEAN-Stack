@@ -69,22 +69,27 @@
     font-family: Arial;
     font-weight: 500;
     font-size: larger;
+
 }
 
 /*non active and non hover*/
 .nav-sidebar > li > a {
     color: #80bd01;
+    transition: color 0s ease-in-out 0s, background-color 0.3s ease-in-out 0s;  /* transition of color, background color takes time now*/
 }
 
 /*active and hover  + active non hover*/
-.nav-sidebar > li.active > a,  .nav > li.active > a:hover {
-    background-color: #d9ebb3;
+.nav-sidebar > li.active > a, .nav > li.active > a:hover {
+    background-image: linear-gradient(#e3f8c8, #70b615);
+    /*background-color: #d9ebb3;*/
     color: black;
 }
 
 /*non-active hover*/
 .nav-sidebar > li:not(.active) > a:hover {
-    background-color: #80bd01;
+    border-color: #70b615 #70b615 hsl(86, 79%, 28%);
+    background-image: linear-gradient(hsl(86, 79%, 44%),hsl(86, 79%, 44%));    
+    background-color: hsl(86, 79%, 44%); /* for leaving trace of background color while hovering to another li*/
     color: white;
 }
 
@@ -117,6 +122,7 @@
         color: green;
         text-align: center;
         border-radius: 5px;
+            transition: color 0s ease-in-out 0s, background-color 0.3s ease-in-out 0s;  /* transition of color, background color takes time now*/
     }
 
     .nav-tabs > li {
@@ -130,13 +136,13 @@
 
         .nav-tabs > li.active > a {
             font-weight: bold;
-            background-color: #d9ebb3;
+            background-image: linear-gradient(#e3f8c8, #70b615);
             color: black;
         }
 
         .nav-tabs > li > a:hover {
             font-weight: bold;
-            background-color: rgba(127, 188, 1, 1);
+            background-image: linear-gradient(hsl(86, 79%, 44%),hsl(86, 79%, 44%));
             color: white;
         }
 
@@ -158,7 +164,6 @@ table, td {
     border: 1px solid;
     border-color: lightgray;
     vertical-align: middle;
-   
 }
 
 .table-striped > tbody > tr:nth-child(2n+1) > th {
@@ -191,12 +196,12 @@ table, td {
             text-decoration: underline;
         }
 
-        .table-striped > tbody > tr:nth-child(2n+1) > td > a,
-        .table-striped > tbody > tr:nth-child(2n) > td > a  {
-            color:darkolivegreen;
-            /*font-size:medium;*/
-            text-decoration:underline;
-        }
+    .table-striped > tbody > tr:nth-child(2n+1) > td > a,
+    .table-striped > tbody > tr:nth-child(2n) > td > a {
+        color: darkolivegreen;
+        /*font-size:medium;*/
+        text-decoration: underline;
+    }
 
 /*-------------------------------handling glyphicone--------------------------------------------*/
 
@@ -207,81 +212,82 @@ table, td {
     font-size: x-large;
 }
 
-.glyphicon-plus:hover {
-    top: 3px;
-    margin-right: 10px;
-    color: darkblue  ;
-    font-size: x-large;
-}
+    .glyphicon-plus:hover {
+        top: 3px;
+        margin-right: 10px;
+        color: darkblue;
+        font-size: x-large;
+    }
 
 .glyphicon-remove {
     top: 3px;
-     margin-right: 10px;
+    margin-right: 10px;
     color: #ff6347;
     font-size: x-large;
 }
 
-.glyphicon-remove:hover {
-    top: 3px;
-     margin-right: 10px;
-    color: red;
-    font-size: x-large;
-}
+    .glyphicon-remove:hover {
+        top: 3px;
+        margin-right: 10px;
+        color: red;
+        font-size: x-large;
+    }
 
 .glyphicon-ok {
     top: 3px;
-     margin-right: 10px;
+    margin-right: 10px;
     color: rgba(127, 188, 1, 1);
     font-size: x-large;
 }
 
-.glyphicon-ok:hover {
-    top: 3px;
-     margin-right: 10px;
-    color: darkgreen;
-    font-size: x-large;
-}
+    .glyphicon-ok:hover {
+        top: 3px;
+        margin-right: 10px;
+        color: darkgreen;
+        font-size: x-large;
+    }
 
 .glyphicon-pencil {
     top: 3px;
-     margin-right: 10px;
-    color:saddlebrown;
+    margin-right: 10px;
+    color: saddlebrown;
     /*color: #deb887;*/
     font-size: x-large;
 }
 
-.glyphicon-pencil:hover {
-    top: 3px;
-     margin-right: 10px;
-    /*color:firebrick;*/
-    /*color: #deb887;*/
-    font-size: x-large;
-}
+    .glyphicon-pencil:hover {
+        top: 3px;
+        margin-right: 10px;
+        /*color:firebrick;*/
+        /*color: #deb887;*/
+        font-size: x-large;
+    }
 
 .glyphicon-triangle-bottom {
     color: white;
-     margin-right: 10px;
-    top:3px;
+    margin-right: 10px;
+    top: 3px;
 }
 
 .glyphicon-chevron-right {
-    color: white;
+    color: #333;
     font-size: medium;
 }
 
 .glyphicon-align-justify {
     top: 3px;
-     margin-right: 10px;
+    margin-right: 10px;
     color: black;
     font-size: x-large;
 }
 
-.glyphicon-align-justify:hover {
-    top: 3px;
-     margin-right: 10px;
-    color: purple;
-    font-size: x-large;
-}
+    .glyphicon-align-justify:hover {
+        top: 3px;
+        margin-right: 10px;
+        color: purple;
+        font-size: x-large;
+    }
+
 .admin-icon-margin {
     /*margin-left:0px;*/
     margin-left: 10px;
@@ -296,29 +302,24 @@ table, td {
 }
 
 .custom-submit-btn {
-    height: 100%;
     text-align: center;
-    background-color: #47841e;
-    color: white;
-    text-decoration: none;
     font-weight: bold;
+    background-image: linear-gradient(#e3f8c8, #70b615);
+    border-color: #70b615 #70b615 hsl(86, 79%, 28%);
+    color: #333 !important;
 }
 
-
-
     .custom-submit-btn:hover {
-        background-color: #80bd01;
-        color: white;
-        text-decoration: none;
+        border-color: #70b615 #70b615 hsl(86, 79%, 28%);
+        background-image: linear-gradient(hsl(86, 79%, 44%),hsl(86, 79%, 44%));
     }
 
 /*------------------------------------------MISC--------------------------------------------------*/
 
-.hide-element{
-    color:white;
+.hide-element {
+    color: white;
 }
 
 .float-right {
     float: right;
 }
-
